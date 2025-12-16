@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:prelova/forgot_password_page.dart';
 import 'package:prelova/login_page.dart';
+import 'package:prelova/otp_page.dart';
+import 'package:prelova/register_page.dart';
+import 'package:prelova/reset_password_page.dart';
 // import 'package:prelova/register_page.dart';
 // import 'package:prelova/onboarding_page.dart';
 // import 'splash_screen.dart';
@@ -15,7 +19,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: LoginPage(),
+      home: RegisterPage(),
     );
   }
 }

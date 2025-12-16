@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:prelova/widgets/gradient_background.dart';
+import 'package:prelova/login_page.dart';
 
 class RegisterPage extends StatelessWidget {
   const RegisterPage({super.key});
@@ -6,96 +8,110 @@ class RegisterPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: SingleChildScrollView(
-          padding: const EdgeInsets.symmetric(horizontal: 24),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              const SizedBox(height: 32),
+      body: GradientBackground(
+        child: SafeArea(
+          child: LayoutBuilder(
+            builder: (context, constraints) {
+              return SingleChildScrollView(
+                padding: const EdgeInsets.symmetric(horizontal: 24),
+                child: ConstrainedBox(
+                  constraints: BoxConstraints(minHeight: constraints.maxHeight),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      const SizedBox(height: 32),
 
-              const Icon(Icons.medical_services_outlined, size: 56),
+                      const Icon(Icons.medical_services_outlined, size: 56),
 
-              const SizedBox(height: 24),
+                      const SizedBox(height: 24),
 
-              const Text(
-                "Create Your Account",
-                textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
-              ),
+                      const Text(
+                        "Create Your Account",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: 22,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
 
-              const SizedBox(height: 8),
+                      const SizedBox(height: 8),
 
-              const Text(
-                "Fill the information below to register",
-                textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.grey, fontSize: 14),
-              ),
+                      const Text(
+                        "Fill the information below to register",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(color: Colors.grey, fontSize: 14),
+                      ),
 
-              const SizedBox(height: 32),
+                      const SizedBox(height: 32),
 
-              _InputLabel(text: "Username"),
-              const SizedBox(height: 8),
-              const _InputField(hint: "Enter your username"),
+                      _InputLabel(text: "Username"),
+                      const SizedBox(height: 8),
+                      const _InputField(hint: "Enter your username"),
 
-              const SizedBox(height: 20),
+                      const SizedBox(height: 20),
 
-              _InputLabel(text: "Email"),
-              const SizedBox(height: 8),
-              const _InputField(hint: "Enter your email"),
+                      _InputLabel(text: "Email"),
+                      const SizedBox(height: 8),
+                      const _InputField(hint: "Enter your email"),
 
-              const SizedBox(height: 20),
+                      const SizedBox(height: 20),
 
-              _InputLabel(text: "Password"),
-              const SizedBox(height: 8),
-              const _PasswordField(hint: "Enter your password"),
+                      _InputLabel(text: "Password"),
+                      const SizedBox(height: 8),
+                      const _PasswordField(hint: "Enter your password"),
 
-              const SizedBox(height: 20),
+                      const SizedBox(height: 20),
 
-              _InputLabel(text: "Confirm Password"),
-              const SizedBox(height: 8),
-              const _PasswordField(hint: "Confirm your password"),
+                      _InputLabel(text: "Confirm Password"),
+                      const SizedBox(height: 8),
+                      const _PasswordField(hint: "Confirm your password"),
 
-              const SizedBox(height: 24),
+                      const SizedBox(height: 24),
 
-              SizedBox(
-                width: double.infinity,
-                height: 52,
-                child: ElevatedButton(
-                  onPressed: () {},
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFF6C63FF),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                  ),
-                  child: const Text(
-                    "Register",
-                    style: TextStyle(fontSize: 16, color: Colors.white),
+                      SizedBox(
+                        width: double.infinity,
+                        height: 52,
+                        child: ElevatedButton(
+                          onPressed: () {},
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: const Color(0xFF6C63FF),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                          ),
+                          child: const Text(
+                            "Register",
+                            style: TextStyle(fontSize: 16, color: Colors.white),
+                          ),
+                        ),
+                      ),
+
+                      const SizedBox(height: 16),
+
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const Text("Already have an account? "),
+                          TextButton(
+                            onPressed: () {
+                              Navigator.push(context, MaterialPageRoute(
+                                builder: (_) => const LoginPage(),
+                              ));
+                            },
+                            child: const Text(
+                              "Sign in",
+                              style: TextStyle(color: Color(0xFF6C63FF)),
+                            ),
+                          ),
+                        ],
+                      ),
+
+                      const SizedBox(height: 24),
+                    ],
                   ),
                 ),
-              ),
-
-              const SizedBox(height: 16),
-
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Text("Already have an account? "),
-                  TextButton(
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                    child: const Text(
-                      "Sign in",
-                      style: TextStyle(color: Color(0xFF6C63FF)),
-                    ),
-                  ),
-                ],
-              ),
-
-              const SizedBox(height: 24),
-            ],
+              );
+            },
           ),
         ),
       ),
