@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:prelova/edit_profile_page.dart';
+import 'package:prelova/profile/account_setting_page.dart';
+import 'package:prelova/profile/edit_profile_page.dart';
+import 'package:prelova/profile/liked_page.dart';
+import 'package:prelova/profile/my_orders_page.dart';
+import 'package:prelova/profile/my_purchases_page.dart';
+import 'package:prelova/profile/view_profile_page.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
@@ -55,7 +60,7 @@ class ProfilePage extends StatelessWidget {
         _menuSection(
           context,
           items: [
-            _MenuData(Icons.person, 'View Profile'),
+            _MenuData(Icons.person, 'View Profile', page: ViewProfilePage()),
             _MenuData(
               Icons.edit,
               'Edit Profile',
@@ -67,16 +72,16 @@ class ProfilePage extends StatelessWidget {
         _menuSection(
           context,
           items: [
-            _MenuData(Icons.favorite_border, 'Liked'),
-            _MenuData(Icons.shopping_bag_outlined, 'My Purchases'),
-            _MenuData(Icons.receipt_long, 'My Orders'),
+            _MenuData(Icons.favorite_border, 'Liked', page: LikedPage()),
+            _MenuData(Icons.shopping_bag_outlined, 'My Purchases', page:  MyPurchasesPage()),
+            _MenuData(Icons.receipt_long, 'My Orders', page: MyOrdersPage()),
           ],
         ),
         const SizedBox(height: 16),
         _menuSection(
           context,
           items: [
-            _MenuData(Icons.settings, 'Account Setting'),
+            _MenuData(Icons.settings, 'Account Setting', page: AccountSettingPage()),
             _MenuData(Icons.help_outline, 'Helpdesk'),
             _MenuData(Icons.support_agent, 'Contact Support'),
             _MenuData(Icons.logout, 'Logout', isLogout: true),
@@ -86,29 +91,25 @@ class ProfilePage extends StatelessWidget {
     );
   }
 
-  Widget _menuSection(
-    BuildContext context, {
-    required List<_MenuData> items,
-  }) {
-  return Container(
-    decoration: BoxDecoration(
-      color: Colors.white,
-      borderRadius: BorderRadius.circular(16),
-    ),
-    child: Column(
-      children: List.generate(items.length, (index) {
-        final item = items[index];
-        return Column(
-          children: [
-            _menuItem(context, item),
-            if (index != items.length - 1) _divider(),
-          ],
-        );
-      }),
-    ),
-  );
-}
-
+  Widget _menuSection(BuildContext context, {required List<_MenuData> items}) {
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(16),
+      ),
+      child: Column(
+        children: List.generate(items.length, (index) {
+          final item = items[index];
+          return Column(
+            children: [
+              _menuItem(context, item),
+              if (index != items.length - 1) _divider(),
+            ],
+          );
+        }),
+      ),
+    );
+  }
 
   Widget _menuItem(BuildContext context, _MenuData item) {
     return ListTile(

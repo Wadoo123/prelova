@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 // import 'package:prelova/forgot_password_page.dart';
 // import 'package:prelova/login_page.dart';
 // import 'package:prelova/otp_page.dart';
-import 'package:prelova/register_page.dart';
+import 'package:prelova/auth/register_page.dart';
 import 'package:prelova/bottom_nav_page.dart';
 // import 'package:prelova/reset_password_page.dart';
 // import 'package:prelova/onboarding_page.dart';

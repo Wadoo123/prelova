@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:prelova/widgets/gradient_background.dart';
-import 'package:prelova/login_page.dart';
+import 'package:prelova/auth/login_page.dart';
 
 class ResetPasswordPage extends StatelessWidget {
   const ResetPasswordPage({super.key});

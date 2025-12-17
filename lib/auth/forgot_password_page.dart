@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:prelova/widgets/gradient_background.dart';
-import 'package:prelova/otp_page.dart';
+import 'package:prelova/auth/otp_page.dart';
 
 class ForgotPasswordPage extends StatelessWidget {
   const ForgotPasswordPage({super.key});
