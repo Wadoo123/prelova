@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:prelova/profile/account_setting_page.dart';
+import 'package:prelova/profile/contact_support_page.dart';
 import 'package:prelova/profile/edit_profile_page.dart';
+import 'package:prelova/profile/helpdesk_page.dart';
 import 'package:prelova/profile/liked_page.dart';
 import 'package:prelova/profile/my_orders_page.dart';
 import 'package:prelova/profile/my_purchases_page.dart';
+import 'package:prelova/profile/my_selling_page.dart';
 import 'package:prelova/profile/view_profile_page.dart';
 
 class ProfilePage extends StatelessWidget {
@@ -75,6 +78,7 @@ class ProfilePage extends StatelessWidget {
             _MenuData(Icons.favorite_border, 'Liked', page: LikedPage()),
             _MenuData(Icons.shopping_bag_outlined, 'My Purchases', page:  MyPurchasesPage()),
             _MenuData(Icons.receipt_long, 'My Orders', page: MyOrdersPage()),
+            _MenuData(Icons.receipt_long, 'My Selling', page: MySellingPage()),
           ],
         ),
         const SizedBox(height: 16),
@@ -82,8 +86,8 @@ class ProfilePage extends StatelessWidget {
           context,
           items: [
             _MenuData(Icons.settings, 'Account Setting', page: AccountSettingPage()),
-            _MenuData(Icons.help_outline, 'Helpdesk'),
-            _MenuData(Icons.support_agent, 'Contact Support'),
+            _MenuData(Icons.help_outline, 'Helpdesk', page: HelpdeskPage()),
+            _MenuData(Icons.support_agent, 'Contact Support', page: ContactSupportPage()),
             _MenuData(Icons.logout, 'Logout', isLogout: true),
           ],
         ),
