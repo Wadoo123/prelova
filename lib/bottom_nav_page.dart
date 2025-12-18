@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:prelova/home_page.dart';
 import 'package:prelova/profile_page.dart';
 
 class BottomNavPage extends StatefulWidget {
@@ -12,7 +13,7 @@ class _BottomNavPageState extends State<BottomNavPage> {
   int _currentIndex = 0;
 
   final List<Widget> _pages = const [
-    BerandaPage(),
+    HomePage(),
     SearchPage(),
     UploadPage(),
     ProfilePage(),
