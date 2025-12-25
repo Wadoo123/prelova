@@ -22,7 +22,7 @@ class HorizontalProductList extends StatelessWidget {
         itemBuilder: (context, index) {
           return SizedBox(
             width: 180,
-            child: ProductCard(),
+            child: ProductCard(title: 'Product $index',),
           );
         },
       ),

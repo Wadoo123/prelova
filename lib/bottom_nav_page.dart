@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:prelova/chat_list_page.dart';
 import 'package:prelova/home_page.dart';
 import 'package:prelova/profile_page.dart';
 
@@ -14,8 +15,8 @@ class _BottomNavPageState extends State<BottomNavPage> {
 
   final List<Widget> _pages = const [
     HomePage(),
-    SearchPage(),
     UploadPage(),
+    ChatListPage(),
     ProfilePage(),
   ];
 
@@ -38,12 +39,12 @@ class _BottomNavPageState extends State<BottomNavPage> {
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            label: 'Search',
-          ),
-          BottomNavigationBarItem(
             icon: Icon(Icons.add_box),
             label: 'Upload',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.mail_outlined),
+            label: 'Inbox',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
@@ -71,8 +72,8 @@ class BerandaPage extends StatelessWidget {
   }
 }
 
-class SearchPage extends StatelessWidget {
-  const SearchPage({super.key});
+class InboxPage extends StatelessWidget {
+  const InboxPage({super.key});
 
   @override
   Widget build(BuildContext context) {
