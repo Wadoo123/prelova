@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:prelova/checkout_page.dart';
 import '../widgets/product_card.dart';
 
 class ProductDetailPage extends StatelessWidget {
@@ -798,7 +799,12 @@ class _BottomActionBar extends StatelessWidget {
               const SizedBox(width: 12),
               Expanded(
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const CheckoutPage()),
+                    );
+                  },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.blue.shade600,
                     foregroundColor: Colors.white,

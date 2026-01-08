@@ -8,6 +8,7 @@ import 'package:prelova/profile/my_orders_page.dart';
 import 'package:prelova/profile/my_purchases_page.dart';
 import 'package:prelova/profile/my_selling_page.dart';
 import 'package:prelova/profile/view_profile_page.dart';
+import 'package:prelova/upload_product_page.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});

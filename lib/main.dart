@@ -4,6 +4,7 @@ import 'package:prelova/bottom_nav_page.dart';
 // import 'package:prelova/login_page.dart';
 // import 'package:prelova/otp_page.dart';
 import 'package:prelova/home_page.dart';
+import 'package:prelova/view_profile_seller.dart';
 // import 'package:prelova/reset_password_page.dart';
 // import 'package:prelova/onboarding_page.dart';
 // import 'splash_screen.dart';
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: BottomNavPage(),
+      home:BottomNavPage(),
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:prelova/checkout_page.dart';
 
 class CartPage extends StatelessWidget {
   const CartPage({super.key});
@@ -396,7 +397,12 @@ class CartBottomBar extends StatelessWidget {
                     ),
                     elevation: 2,
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const CheckoutPage()),
+                    );
+                  },
                   child: const Row(
                     children: [
                       Text(

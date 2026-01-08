@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:prelova/chat_list_page.dart';
 import 'package:prelova/home_page.dart';
 import 'package:prelova/profile_page.dart';
+import 'package:prelova/upload_product_page.dart';
 
 class BottomNavPage extends StatefulWidget {
   const BottomNavPage({super.key});
@@ -15,7 +16,7 @@ class _BottomNavPageState extends State<BottomNavPage> {
 
   final List<Widget> _pages = const [
     HomePage(),
-    UploadPage(),
+    UploadProductPage(),
     ChatListPage(),
     ProfilePage(),
   ];
@@ -80,20 +81,6 @@ class InboxPage extends StatelessWidget {
     return const Center(
       child: Text(
         'Ini Halaman Search',
-        style: TextStyle(fontSize: 20),
-      ),
-    );
-  }
-}
-
-class UploadPage extends StatelessWidget {
-  const UploadPage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Center(
-      child: Text(
-        'Ini Halaman Upload Product',
         style: TextStyle(fontSize: 20),
       ),
     );
